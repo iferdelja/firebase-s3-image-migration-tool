@@ -27,7 +27,7 @@ If we instead want our images to be e.g. "http://coolbucket.s3.amazonaws.com/5he
 
 Run "npm install" to install dependencies.
 
-To run migration, prepare a properties file (named: properties) of this kind:
+To use the tool prepare a properties file (named: properties) of this kind:
 ```
 s3UserAccessKey = <your_access_key>
 s3secretAccessKey = <your_secret>
@@ -35,4 +35,4 @@ bucketName = <your_bucket_name_on_s3>
 firebaseDataUrl = <firebase_entities_url>
 ```
 
-
+Run "node migrate.js" to run the migration.
