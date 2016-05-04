@@ -1,6 +1,6 @@
 # firebase-s3-image-migration-tool
 
-This (Node.js) tool is usefull in a situation where a number of json entities at a certain Firebase location (e.g. ...fireba.com/entities) contain image (and thumbnail) urls pointing to a non-S3 location. This tool migrates images from given non-S3 location to the specified S3 location and updates the Firebase entity accordingly.
+This (Node.js) tool is usefull in a situation where a number of Firebase json entities containing image (and thumbnail) urls pointing to a non-S3 location. This tool migrates images from given non-S3 location to the specified Amazon S3 location and updates the Firebase entity accordingly.
 
 I used this to migrate images to S3 away from Parse, after migrating all other data to Firebase from Parse.
 
