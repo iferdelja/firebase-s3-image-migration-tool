@@ -4,7 +4,7 @@ This (Node.js) tool is usefull in a situation where a number of json entities at
 
 I used this to migrate images to S3 away from Parse, after migrating all other data to Firebase from Parse.
 
-If we have a Firebase db (e.g. at https://myfirebase.firebaseio.com/entities) with following contents
+Assume we have a Firebase db (e.g. at https://myfirebase.firebaseio.com/entities) with following contents
 
 ```
 {
@@ -21,7 +21,9 @@ If we have a Firebase db (e.g. at https://myfirebase.firebaseio.com/entities) wi
 }
 ```
 
-But we instead want our images to be e.g. "http://coolbucket.s3.amazonaws.com/5heuih4.....", then this script might be usefull to you.
+If we instead want our images to be e.g. "http://coolbucket.s3.amazonaws.com/5heuih4.....", then this script might be usefull to you.
+
+# Usage
 
 Run "npm install" to install dependencies.
 
