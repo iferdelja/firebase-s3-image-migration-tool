@@ -41,20 +41,10 @@ function migrateImageToS3(s3, imageUrl, imageKey, success, error) {
 	});
 };
 
-// function downloadFile() {
-// 	var http = require("http");
-// 	var fs = require('fs');
-
-// 	var file = fs.createWriteStream("image.jpg");
-// 	var request = http.get(parseUrl, function(response) {
-//   		response.pipe(file);
-// 	});
-// }
-
 function migrateFirebaseImagesToS3() {
 	var firebaseUrl = properties.get("firebaseDataUrl");
 	var Firebase = require("firebase");
-	var firebasePatchesRef = new Firebase(firebaseUrl);
+	var firebaseEntitiesRef = new Firebase(firebaseUrl);
 	var uuid = require('node-uuid');
 	var imageUrlKey = "imageUrl";
 	var thumbnailUrlKey = "thumbnailUrl";
@@ -107,7 +97,7 @@ function migrateFirebaseImagesToS3() {
 
 	function migratePatchImage(key, patch, cb) {
 		console.log("Migrating image " + patch[imageUrlKey]);
-		var patchRef = firebasePatchesRef.child(key);
+		var patchRef = firebaseEntitiesRef.child(key);
 		migrateImageToS3(getS3(), patch[imageUrlKey], "images/"+uuid.v4(), function(newImageUrl) {
 			console.log("New location " + newImageUrl);
 			var obj = {};
@@ -121,7 +111,7 @@ function migrateFirebaseImagesToS3() {
 
 	function migratePatchThumb(key, patch, cb) {
 		console.log("Migrating thumbnail image " + patch[thumbnailUrlKey]);
-		var patchRef = firebasePatchesRef.child(key);
+		var patchRef = firebaseEntitiesRef.child(key);
 		migrateImageToS3(getS3(), patch[thumbnailUrlKey], "thumbs/"+uuid.v4(), function(newImageUrl) {
 			console.log("New location " + newImageUrl);
 			var obj = {};
@@ -134,7 +124,7 @@ function migrateFirebaseImagesToS3() {
 	}
 
 	console.log("Will acquire Firebase snapshot");
-	firebasePatchesRef.once("value", function(snapshot) {
+	firebaseEntitiesRef.once("value", function(snapshot) {
 	  	firebasePatches = snapshot.val();
 	  	for (var key in firebasePatches) {
 	  		// Make sure no prototype keys are used.
