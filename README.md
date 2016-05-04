@@ -23,7 +23,9 @@ If we have a Firebase db (e.g. at https://myfirebase.firebaseio.com/entities) wi
 
 But we instead want our images to be e.g. "http://coolbucket.s3.amazonaws.com/5heuih4.....", then this script might be usefull to you.
 
-Prerequisite #1 is a properties file of this kind:
+Run "npm install" to install dependencies.
+
+To run migration, prepare a properties file (named: properties) of this kind:
 ```
 s3UserAccessKey = <your_access_key>
 s3secretAccessKey = <your_secret>
