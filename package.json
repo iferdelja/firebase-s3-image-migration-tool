@@ -1,6 +1,6 @@
 {
   "author": "Ivan Ferdelja",
-  "name": "firebase-s3-image-migration",
+  "name": "firebase-s3-image-migration-tool",
   "version": "1.0.0",
   "repository": {
     "type": "git",
