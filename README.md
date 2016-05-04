@@ -36,3 +36,7 @@ firebaseDataUrl = <firebase_entities_url>
 ```
 
 Run "node migrate.js" to run the migration.
+
+## Security note
+
+Please adjust image ACL if needed. This script does not set an explicit ACL when puting files to S3.
