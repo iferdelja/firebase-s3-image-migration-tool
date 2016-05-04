@@ -23,7 +23,7 @@ Assume we have a Firebase db (e.g. at https://myfirebase.firebaseio.com/entities
 
 If we instead want our images to be e.g. "http://coolbucket.s3.amazonaws.com/5heuih4.....", then this script might be usefull to you.
 
-# Usage
+## Usage
 
 Run "npm install" to install dependencies.
 
